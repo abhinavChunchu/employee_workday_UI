@@ -4,3 +4,8 @@ export interface EmployeeListModal {
   employeeType: string;
   workingDays: number;
 }
+
+export interface EmployeVerficationServiceModal{
+  employeeId: string;
+  days: number;
+}

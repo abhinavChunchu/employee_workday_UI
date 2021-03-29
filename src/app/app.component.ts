@@ -11,7 +11,6 @@ import {MatTableDataSource} from '@angular/material/table';
 })
 export class AppComponent implements OnInit {
 
-
   title = 'employee-workday';
   employeeList: EmployeeListModal[] | undefined;
   displayedColumns: string[] = ['employeeId', 'vacationDays', 'employeeType', 'workingDays'];
@@ -38,7 +37,6 @@ export class AppComponent implements OnInit {
   }
 
   async onWorkUpdate(checkoutForm: FormGroup): Promise<void> {
-    this.employeeList = undefined;
     this.employeeList = await this.employeeTrackerService.updateWorkDay(checkoutForm.value.employeeId,
       checkoutForm.value.days) as EmployeeListModal[];
     this.dataSource = new MatTableDataSource(this.employeeList);
